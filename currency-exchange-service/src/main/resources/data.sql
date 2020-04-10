@@ -1,0 +1,2 @@
+insert into Exchange_Value(id,currency_from,currency_to,conversion_multiple,port) values(1,'USD','INR',75,0);
+insert into Exchange_Value(id,currency_from,currency_to,conversion_multiple,port) values(2,'EUR','INR',65,0);
