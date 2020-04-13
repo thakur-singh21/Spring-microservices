@@ -18,4 +18,15 @@ public class LimitsConfigController {
 		
 		return new LimitsConfiguration(limitsConfig.getMinimum(),limitsConfig.getMaximum());
 	}
+
+	@GetMapping("/fault-tolarence")
+	@HystrixCommand(fallbackMethod = "limitsFallbackMethod")
+	public LimitsConfiguration faultLimitConfiguration() {
+		
+		throw new RuntimeException("not avalable");
+	}
+	
+	public LimitsConfiguration limitsFallbackMethod() {
+		return new LimitsConfiguration(9, 999);
+	}
 }
